@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
-
+import os 
+from keep_alive import keep_alive
 client = discord.Client()
 client = commands.Bot(command_prefix='$')
 
@@ -24,7 +25,7 @@ async def on_message(pesan):
     return
 
   if pesan.content.startswith('$w'):
-    await pesan.channel.send(f'pilih tipe stressmu!\n 1.ringan\n 2.berat\n 3.Gws (sumpah GWS bro)\n 4.Waifu diklem\n 5.halu\n 6.rsj\n 7.SEGGGGGGGGSSSSSSSS')
+    await pesan.channel.send(f'pilih tipe stressmu!\n 1.ringan\n 2.berat\n 3.Gws (sumpah GWS bro)\n 4.Waifu diklem\n 5.halu\n 6.rsj\n 7.SEGGGGGGGGGGGGGSSSSSSSSS')
   if pesan.content.startswith('$1'):
         channel = pesan.channel
         await channel.send('tulis namanya dulu coek')
@@ -94,7 +95,7 @@ async def on_message(pesan):
         msg = await client.wait_for('message', check=check)
         waifu = msg.content.upper()
         await channel.send(f'{waifu}, INJAK GW {waifu}, INJAK GW SEKUAT TENAGAMU , TATAP AKU DENGAN TATAPAN SERAM MU {waifu}, HINA AKU, LUDAHI AKU {waifu}, CACI MAKI AKU DENGAN TATAPAN TAJAM MU {waifu}, AI LAP UUU {waifu} I LOVE U SOOOOOOOOOOOO MUUUUCCCCHHHHH {waifu} HU HA HU HA WANGY WANGY!!!!'.format(msg))
-  
+
   if pesan.content.startswith('$7'):
         channel = pesan.channel
         await channel.send('tulis namanya dulu coek')
@@ -106,9 +107,21 @@ async def on_message(pesan):
         msg = await client.wait_for('message', check=check)
         waifu = msg.content.upper()
         await channel.send(f'WOOOAAGHHSHSHSHWKSJSIHSSUSSDHG {waifu} CROT BANGET SUMPAH PENGEN BERSETUBUH SAMA {waifu} SAMPE GAK BISA DIRI 😭😭😭😭😭😭 SEEEGGGGSSSSS😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭'.format(msg))
-  
+
+  if pesan.content.startswith('$8'):
+        channel = pesan.channel
+        await channel.send('write the name first')
+
+        def check(m):
+            waifu = m.content
+            return m.content == waifu and m.channel == channel
+
+        msg = await client.wait_for('message', check=check)
+        waifu = msg.content.upper()
+        await channel.send(f'I NEED TO BREED {waifu} I NEED HER TO MOTHER MY CHILDREN I NEED TO FILL HER WOMB I WANT EVERY SINGLE DROP EVERY LAST SINGLE SPERM CELL MY BODY EVER PRODUCES TO BE IN {waifu}\'s WOMB TWINS TRIPLETS QUADRUPLETS I WILL SINGLEHANDEDLY FIX EUROPE\'S DECLINING BIRTHRATES WITH MY {waifu}'.format(msg))
+
   
   await client.process_commands(pesan)
 
-client.run('kunci/token')
-
+keep_alive()
+client.run(os.getenv('kunci'))
