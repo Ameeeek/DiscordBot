@@ -25,7 +25,7 @@ async def on_message(pesan):
     return
 
   if pesan.content.startswith('$w'):
-    await pesan.channel.send(f'pilih tipe stressmu!\n 1.ringan\n 2.berat\n 3.Gws (sumpah GWS bro)\n 4.Waifu diklem\n 5.halu\n 6.rsj\n 7.SEGGGGGGGGGGGGGSSSSSSSSS')
+    await pesan.channel.send(f'pilih tipe stressmu!\n 1.ringan\n 2.berat\n 3.Gws (sumpah GWS bro)\n 4.Waifu diklem\n 5.halu\n 6.rsj\n 7.SEGGGGGGGGGGGGGSSSSSSSSS\n 8.I NEED TO BREED')
   if pesan.content.startswith('$1'):
         channel = pesan.channel
         await channel.send('tulis namanya dulu coek')
