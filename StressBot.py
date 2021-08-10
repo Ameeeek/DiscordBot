@@ -25,7 +25,7 @@ async def on_message(pesan):
     return
 
   if pesan.content.startswith('$w'):
-    await pesan.channel.send(f'pilih tipe stressmu!\n 1.ringan\n 2.berat\n 3.Gws (sumpah GWS bro)\n 4.Waifu diklem\n 5.halu\n 6.rsj\n 7.SEGGGGGGGGGGGGGSSSSSSSSS\n 8.I NEED TO BREED\n 9.Suap')
+    await pesan.channel.send(f'pilih tipe stressmu!\n 1.ringan\n 2.berat\n 3.Gws (sumpah GWS bro)\n 4.Waifu diklem\n 5.halu\n 6.rsj\n 7.SEGGGGGGGGGGGGGSSSSSSSSS\n 8.I NEED TO BREED\n 9.Suap\n 0.Extreme')
   if pesan.content.startswith('$1'):
         channel = pesan.channel
         await channel.send('tulis namanya dulu coek')
@@ -132,6 +132,17 @@ async def on_message(pesan):
         waifu = msg.content.upper()
         await channel.send(f'Huhahuha Lagi suapin {waifu} eskrim:heart_eyes::heart_eyes:Mana makannya banyak lgi,gpp deh buat {waifu}:heart_eyes::heart_eyes:Cuman gw yg bisa liat,soalnya gw pasangannya:heart_eyes::heart_eyes::heart_eyes::heart_eyes::heart::heart::heart:'.format(msg))
 
+  if pesan.content.startswith('$0'):
+        channel = pesan.channel
+        await channel.send('tulis namanya dulu coek')
+
+        def check(m):
+          waifu = m.content 
+          return m.content == waifu and m.channel == channel
+        
+        msg = await client.wait_for('message', check=check)
+        waifu = msg.content.upper()
+        await channel.send(f'KESEKSIAN {waifu} TIADA TARA, TIAP HARI GW NGEBAYANGIN {waifu} DIDEPAN GW DAN DIPANGKUAN GUE, TIAP HARI GW NGEBAYANGIN {waifu} JADI MILIKI GW, NGEBAYANGIN KALO LU LAGI MASAK DAN TIBA2 GW MASUKIN DARI BELAKANG. {waifu} GW UDAH GATAHAN NGELIAT WAJAH LO YG IMUT DAN SIAP DI CROT DIMUKA PLEASE SEKALI LAGI GW MINTA SAMA LU LIATIN KETEK LU YG BERKERINGAT,GW UDAH GASABAR NGEJILAT SELURUH TUBUH LU TERUTAMA KETEK SAMPAI MULUT GW KERING, PLEASE {waifu} gausah dengerin org yg ngejelekkin kamu, yakin banyak org yg lebih apresiasi kamu dari segala aspek kamu cantik u\'re worth it and gorgeous :heartpulse: don\'t let them get you down!! semangatt okay :sparkles::heartpulse::heartpulse: i hope u get betterr luv! xx <33'.format(msg))
   
   await client.process_commands(pesan)
 
