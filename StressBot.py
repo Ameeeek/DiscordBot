@@ -112,7 +112,7 @@ async def on_message(pesan):
 
         msg = await client.wait_for('message', check=check)
         waifu = msg.content.upper()
-        await channel.send(f'WOOOAAGHHSHSHSHWKSJSIHSSUSSDHG {waifu} CROT BANGET SUMPAH PENGEN BERSETUBUH SAMA {waifu} SAMPE GAK BISA DIRI 😭😭😭😭😭😭 SEEEGGGGSSSSS😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭'.format(msg))
+        await channel.send(f'WOOOAAGHHSHSHSHWKSJSIHSSUSSDHG {waifu} CROT BANGET SUMPAH PENGEN BERSETUBUH SAMA {waifu} SAMPE GAK BISA DIRI 😭😭😭😭😭SEEEGGGGSSSSS😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭'.format(msg))
 
   if pesan.content.startswith('$1en'):
         channel = pesan.channel
