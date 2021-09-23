@@ -8,7 +8,7 @@ client = commands.Bot(command_prefix='$')
 
 @client.event
 async def on_ready():
-  activity=discord.Activity(type=discord.ActivityType.watching, name='UWOHGH😭')
+  activity=discord.Activity(type=discord.ActivityType.watching, name='UWOHGH 😭 | $w')
   await client.change_presence(activity=activity)
   print('bot {0.user} udah nyala coek'.format(client))
 
@@ -26,10 +26,12 @@ async def on_message(pesan):
   if pesan.author == client.user:
     return
 
-  if pesan.content.startswith('$ID'):
-    await pesan.channel.send(f'pilih tipe stressmu!\n 1.ringan\n 2.berat\n 3.Gws (sumpah GWS bro)\n 4.Waifu diklem\n 5.halu\n 6.rsj\n 7.SEGGGGGGGGGGGGGSSSSSSSSS\n 8.Extreme\n 9.Suap')
-  if pesan.content.startswith('$EN'):
-    await pesan.channel.send(f'Choose your Stress Type!\n 1. I NEED TO BREED\n 2. GOD DAMNIT')
+  if pesan.content.startswith('$w'):
+    await pesan.channel.send(f'choose your language || pilih bahasa mu\n$id for indonesia\n$en for english')
+  if pesan.content.startswith('$id'):
+    await pesan.channel.send(f'pilih tipe stressmu!\n1.ringan\n2.berat\n3.Gws (sumpah GWS bro)\n4.Waifu diklem\n5.halu\n6.rsj\n7.SEGGGGGGGGGGGGGSSSSSSSSS\n8.Extreme\n9.Suap\n10.rela ditindih')
+  if pesan.content.startswith('$en'):
+    await pesan.channel.send(f'Choose your Stress Type!\n1.I NEED TO BREED\n2.GOD DAMNIT\n3.VERY GOOD MORNING')
   if pesan.content.startswith('$1id'):
         channel = pesan.channel
         await channel.send('tulis namanya dulu coek')
@@ -169,6 +171,17 @@ async def on_message(pesan):
         msg = await client.wait_for('message', check=check)
         waifu = msg.content
         await channel.send(f':kissing_heart::ok_hand::smiling_face_with_3_hearts::heart_eyes::heart_eyes:rela ditindih semaleman sama {waifu} tanpa pegel linux:heart_eyes::heart_eyes::kissing_heart::smiling_face_with_3_hearts::smiling_face_with_3_hearts:,Rela menghekel nasa demi mendapatkan foto ecci desunya {waifu},menggeser venus mo nandomo demi mendapatkan ai no pujaan hati:smiling_face_with_3_hearts::smiling_face_with_3_hearts::smiling_face_with_3_hearts::kissing_heart:'.format(msg))
+  if pesan.content.startswith('$3en'):
+        channel = pesan.channel
+        await channel.send('tulis namanya dulu coek')
+
+        def check(m):
+          waifu = m.content 
+          return m.content == waifu and m.channel == channel
+        
+        msg = await client.wait_for('message', check=check)
+        waifu = msg.content
+        await channel.send(f'Very good morning pretty ${waifu} you looks very nice too I likes that I like you too so pretty lady have a beautiful day and good luck sweetheart kisses and a big hug Xx:heart_eyes::cupid::kissing_heart::fire::sparkles::star2::boom::raised_hands::crown::100::point_up::kiss::heartbeat::two_hearts::sparkles::cupid::boom::heart::star2::gift_heart::kiss:'.format(msg))
   await client.process_commands(pesan)
 
 keep_alive()
